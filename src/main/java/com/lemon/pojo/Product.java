@@ -9,7 +9,7 @@ import lombok.Setter;
 @Setter
 public class Product {
     /**
-     *@ClassName Product
+     *@ClassName Product实体类
      *@Description
      *@Author lemon
      *@Date 10:09 2022/3/19
