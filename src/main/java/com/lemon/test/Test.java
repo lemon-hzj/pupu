@@ -17,5 +17,6 @@ public class Test {
         PuPuUtil PuPuUtil = new PuPuUtil();
         PuPuUtil.showProduct();
         System.out.println("");
+        System.out.println("");
     }
 }
