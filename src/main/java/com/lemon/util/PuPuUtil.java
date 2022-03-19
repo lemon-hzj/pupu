@@ -50,6 +50,7 @@ public class PuPuUtil {
         System.out.println("价格："+product.getPrice());
         System.out.println("原价/折扣价："+product.getMarket_price()+"/"+product.getPrice());
         System.out.println("详细信息："+product.getContent());
+        System.out.println("1");
     }
 
 }
