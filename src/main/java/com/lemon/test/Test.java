@@ -16,7 +16,5 @@ public class Test {
     public static void main(String[] args) throws IOException {
         PuPuUtil PuPuUtil = new PuPuUtil();
         PuPuUtil.showProduct();
-        System.out.println("");
-        System.out.println("");
     }
 }

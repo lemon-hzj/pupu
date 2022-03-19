@@ -19,8 +19,8 @@ public class PuPuUtil {
      **/
     LinkedTreeMap data ;
     Product product = new Product();
-    public void parsePuPu() throws IOException {
-        String url="https://j1.pupuapi.com/client/product/storeproduct/detail/831b632e-12bd-4c23-a6fd-a18749d8d508/188d7a73-f518-418e-a928-e293f4b17556";
+    public void PuPuJson() throws IOException {
+        String url="https://j1.pupuapi.com/client/product/storeproduct/detail/deef1dd8-65ee-46bc-9e18-8cf1478a67e9/b088d36b-b296-4288-abac-07d5244f5821";
         Connection.Response res = Jsoup.connect(url)
                 .header("Accept", "*/*")
                 .header("Accept-Encoding", "gzip, deflate")
@@ -43,14 +43,13 @@ public class PuPuUtil {
     }
 
     public void showProduct() throws IOException {
-        parsePuPu();
+        PuPuJson();
         //商品信息在控制台输出
         System.out.println("-----------------------商品："+product.getName()+"-----------------------");
         System.out.println("规格："+product.getSpec());
         System.out.println("价格："+product.getPrice());
         System.out.println("原价/折扣价："+product.getMarket_price()+"/"+product.getPrice());
         System.out.println("详细信息："+product.getContent());
-        System.out.println("1");
     }
 
 }
