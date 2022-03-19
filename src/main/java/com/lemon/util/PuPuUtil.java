@@ -47,6 +47,7 @@ public class PuPuUtil {
      * @throws IOException
      */
     public void showProduct() throws IOException {
+        //调用PuPu数据处理方法
         PuPuJson();
         //商品信息在控制台输出
         System.out.println("-----------------------商品："+product.getName()+"-----------------------");
