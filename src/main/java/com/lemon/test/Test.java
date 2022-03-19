@@ -13,8 +13,9 @@ public class Test {
      *@Date 10:23 2022/3/19
      *@Version 2.1
      **/
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, InterruptedException {
         PuPuUtil PuPuUtil = new PuPuUtil();
         PuPuUtil.showProduct();
+        PuPuUtil.realTimeMonitoring();
     }
 }

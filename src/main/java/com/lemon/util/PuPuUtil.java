@@ -7,6 +7,7 @@ import org.jsoup.Connection;
 import org.jsoup.Jsoup;
 
 import java.io.IOException;
+import java.time.LocalDateTime;
 import java.util.HashMap;
 
 public class PuPuUtil {
@@ -33,8 +34,7 @@ public class PuPuUtil {
         HashMap hashMap = gson.fromJson(res.body(), HashMap.class);
         //获取data里面的值
         data = (LinkedTreeMap) hashMap.get("data");
-
-        /* 获取数据封装到product中 */
+        // 获取数据封装到product中
         product.setName((String) data.get("name"));
         product.setSpec((String) data.get("spec"));
         product.setPrice((Double) data.get("price")/100);
@@ -42,6 +42,10 @@ public class PuPuUtil {
         product.setContent((String) data.get("share_content"));
     }
 
+    /**
+     * 展示酸奶商品信息
+     * @throws IOException
+     */
     public void showProduct() throws IOException {
         PuPuJson();
         //商品信息在控制台输出
@@ -50,6 +54,21 @@ public class PuPuUtil {
         System.out.println("价格："+product.getPrice());
         System.out.println("原价/折扣价："+product.getMarket_price()+"/"+product.getPrice());
         System.out.println("详细信息："+product.getContent());
+    }
+
+    /**
+     * 每秒钟实时监控酸奶商品的信息
+     * @throws IOException
+     * @throws InterruptedException
+     */
+    public void realTimeMonitoring() throws IOException,InterruptedException {
+        //每3秒抓取一次商品信息
+        while (true){
+            PuPuJson();
+            System.out.println("当前时间为"+ LocalDateTime.now()+" ,"+product.getName()+":价格为"+product.getPrice());
+            Thread.sleep(5000);
+        }
+
     }
 
 }
